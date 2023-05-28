@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        
+        form {
+            margin-bottom: 20px;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        
+        h2 {
+            margin-top: 20px;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .no-results {
+            font-style: italic;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Home of PathDB!</h1>
+    <form action="{% url 'home' %}" method="GET">
+        <input type="text" name="q" placeholder="Search...">
+        <input type="submit" value="Search">
+    </form>
+    
+    <h2>Search Results for "{{ query }}"</h2>
+    <ul>
+        {% for result in results %}
+            <li>{{ result }}</li>
+        {% empty %}
+            <li>No results found.</li>
+        {% endfor %}
+    </ul>
+    <p>interviewuser_01 Status: {% if interviewuser_01 %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_02 Status: {% if interviewuser_02 %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_03 Status: {% if interviewuser_03 %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_04 Status: {% if interviewuser_04 %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_05 Status: {% if interviewuser_05 %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_06 Status: {% if interviewuser_06 %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_07 Status: {% if interviewuser_07 %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_08 Status: {% if interviewuser_08 %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_09 Status: {% if interviewuser_09 %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_10 Status: {% if interviewuser_10 %}Online{% else %}Offline{% endif %}</p>
+    <p>hnjlicsrv01 Status: {% if hnjlicsrv01 %}Online{% else %}Offline{% endif %}</p>
+    <p>hnjlicsrv02 Status: {% if hnjlicsrv02 %}Online{% else %}Offline{% endif %}</p>
+    <p>hnjlicsrv03 Status: {% if hnjlicsrv03 %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_ Status: {% if interviewuser_ %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_ Status: {% if interviewuser_ %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_ Status: {% if interviewuser_ %}Online{% else %}Offline{% endif %}</p>
+    <p>interviewuser_ Status: {% if interviewuser_ %}Online{% else %}Offline{% endif %}</p>
+    <!-- Add your home page content here -->
+</body>
+</html>
