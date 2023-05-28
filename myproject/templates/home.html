@@ -3,105 +3,24 @@
     <head>
         <title>Home Page - PathDB</title>
         <style>
-            body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background-color: #f5f5f5;
-                margin: 0;
-                padding: 20px;
-            }
+            /* ... Previous CSS styles ... */
             
-            .container {
-                max-width: 800px;
-                margin: 0 auto;
-            }
-            
-            .header {
-                text-align: center;
-                margin-bottom: 40px;
-            }
-            
-            h1 {
-                color: #333;
-                font-size: 36px;
-                font-weight: bold;
-                margin-bottom: 20px;
-            }
-            
-            .search-form {
-                text-align: center;
-                margin-bottom: 40px;
-            }
-            
-            input[type="text"] {
-                padding: 10px;
-                width: 300px;
-                font-size: 16px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                transition: box-shadow 0.3s ease;
-            }
-            
-            input[type="text"]:focus {
-                outline: none;
-                box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-            }
-            
-            .system-status {
-                text-align: center;
-                margin-bottom: 40px;
-            }
-            
-            .status {
-                font-size: 18px;
-                color: #555;
+            .status-offline {
+                color: #ff0000;
                 font-weight: bold;
             }
             
-            .status.online {
-                color: #008000;
+            .status-icon {
+                display: inline-block;
+                margin-right: 5px;
+                font-size: 20px;
             }
             
-            .status.offline {
+            .status-icon.offline {
                 color: #ff0000;
             }
-            
-            .results {
-                text-align: center;
-            }
-            
-            h2 {
-                color: #333;
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 20px;
-            }
-            
-            ul {
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-            }
-            
-            li {
-                background-color: #fff;
-                padding: 10px;
-                margin-bottom: 10px;
-                border-radius: 4px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease;
-                cursor: pointer;
-            }
-            
-            li:hover {
-                transform: translateY(-2px);
-            }
-            
-            .no-results {
-                font-style: italic;
-                color: #777;
-            }
         </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </head>
 <body>
     <h1>Welcome to the Home of PathDB!</h1>
@@ -126,7 +45,10 @@
             </tr>
             <tr>
                 <td>InterviewUser_01</td>
-                <td class="status status-online">{% if interviewuser_01 %}Online{% else %}Offline{% endif %}</td>
+                <td class="status {% if not interviewuser_01 %}status-offline{% endif %}">
+                    <i class="status-icon {% if not interviewuser_01 %}offline{% endif %} fas fa-exclamation-triangle"></i>
+                    {% if interviewuser_01 %}Online{% else %}Offline{% endif %}
+                </td>
             </tr>
             <tr>
                 <td>InterviewUser_02</td>
@@ -190,7 +112,10 @@
             </tr>
             <tr>
                 <td>interviewuser_14</td>
-                <td class="status status-online">{% if interviewuser_14 %}Online{% else %}Offline{% endif %}</td>
+                <td class="status {% if not interviewuser_01 %}status-offline{% endif %}">
+                    <i class="status-icon {% if not interviewuser_01 %}offline{% endif %} fas fa-exclamation-triangle"></i>
+                    {% if interviewuser_14 %}Online{% else %}Offline{% endif %}
+                </td>
             </tr>
         </table>
 
