@@ -1,76 +1,108 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Home Page</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 20px;
-        }
-        
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 36px;
-            font-weight: bold;
-        }
-        
-        form {
-            margin-bottom: 20px;
-        }
-        
-        input[type="text"] {
-            padding: 10px;
-            width: 300px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        
-        input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            font-size: 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        input[type="submit"]:hover {
-            background-color: #555;
-        }
-        
-        h2 {
-            margin-top: 20px;
-            color: #333;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        li {
-            margin-bottom: 10px;
-            background-color: #fff;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .no-results {
-            font-style: italic;
-            color: #777;
-        }
-    </style>
-</head>
+    <head>
+        <title>Home Page - PathDB</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f5f5f5;
+                margin: 0;
+                padding: 20px;
+            }
+            
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            h1 {
+                color: #333;
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            
+            .search-form {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            input[type="text"] {
+                padding: 10px;
+                width: 300px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: box-shadow 0.3s ease;
+            }
+            
+            input[type="text"]:focus {
+                outline: none;
+                box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+            }
+            
+            .system-status {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            .status {
+                font-size: 18px;
+                color: #555;
+                font-weight: bold;
+            }
+            
+            .status.online {
+                color: #008000;
+            }
+            
+            .status.offline {
+                color: #ff0000;
+            }
+            
+            .results {
+                text-align: center;
+            }
+            
+            h2 {
+                color: #333;
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            li {
+                background-color: #fff;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                cursor: pointer;
+            }
+            
+            li:hover {
+                transform: translateY(-2px);
+            }
+            
+            .no-results {
+                font-style: italic;
+                color: #777;
+            }
+        </style>
+    </head>
 <body>
     <h1>Welcome to the Home of PathDB!</h1>
     <form action="{% url 'home' %}" method="GET">
@@ -86,23 +118,83 @@
             <li>No results found.</li>
         {% endfor %}
     </ul>
-    <p>interviewuser_01 Status: {% if interviewuser_01 %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_02 Status: {% if interviewuser_02 %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_03 Status: {% if interviewuser_03 %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_04 Status: {% if interviewuser_04 %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_05 Status: {% if interviewuser_05 %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_06 Status: {% if interviewuser_06 %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_07 Status: {% if interviewuser_07 %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_08 Status: {% if interviewuser_08 %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_09 Status: {% if interviewuser_09 %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_10 Status: {% if interviewuser_10 %}Online{% else %}Offline{% endif %}</p>
-    <p>hnjlicsrv01 Status: {% if hnjlicsrv01 %}Online{% else %}Offline{% endif %}</p>
-    <p>hnjlicsrv02 Status: {% if hnjlicsrv02 %}Online{% else %}Offline{% endif %}</p>
-    <p>hnjlicsrv03 Status: {% if hnjlicsrv03 %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_ Status: {% if interviewuser_ %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_ Status: {% if interviewuser_ %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_ Status: {% if interviewuser_ %}Online{% else %}Offline{% endif %}</p>
-    <p>interviewuser_ Status: {% if interviewuser_ %}Online{% else %}Offline{% endif %}</p>
+    <div class="system-status">
+        <table class="status-table">
+            <tr>
+                <th>System</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>InterviewUser_01</td>
+                <td class="status status-online">{% if interviewuser_01 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>InterviewUser_02</td>
+                <td class="status status-online">{% if interviewuser_02 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>InterviewUser_03</td>
+                <td class="status status-online">{% if interviewuser_03 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>InterviewUser_04</td>
+                <td class="status status-online">{% if interviewuser_04 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>InterviewUser_05</td>
+                <td class="status status-online">{% if interviewuser_05 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>InterviewUser_06</td>
+                <td class="status status-online">{% if interviewuser_06 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>InterviewUser_07</td>
+                <td class="status status-online">{% if interviewuser_07 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>InterviewUser_08</td>
+                <td class="status status-online">{% if interviewuser_08 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>InterviewUser_09</td>
+                <td class="status status-online">{% if interviewuser_09 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>InterviewUser_10</td>
+                <td class="status status-online">{% if interviewuser_10 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>HNJLICSRV01</td>
+                <td class="status status-online">{% if hnjlicsrv01 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>HNJLICSRV02</td>
+                <td class="status status-online">{% if hnjlicsrv02 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>HNJLICSRV03</td>
+                <td class="status status-online">{% if hnjlicsrv03 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>TTHONSRV</td>
+                <td class="status status-online">{% if TTHONSRV %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>interviewuser_12</td>
+                <td class="status status-online">{% if interviewuser_12 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>interviewuser_13</td>
+                <td class="status status-online">{% if interviewuser_13 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+            <tr>
+                <td>interviewuser_14</td>
+                <td class="status status-online">{% if interviewuser_14 %}Online{% else %}Offline{% endif %}</td>
+            </tr>
+        </table>
+
     <!-- Add your home page content here -->
+    </div>
 </body>
 </html>

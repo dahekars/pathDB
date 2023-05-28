@@ -66,7 +66,7 @@ def home(request):
     hnjlicsrv01_status = check_remote_system_status(hnjlicsrv01)
     hnjlicsrv02_status = check_remote_system_status(hnjlicsrv02)
     hnjlicsrv03_status = check_remote_system_status(hnjlicsrv03)
-    interviewuser__status = check_remote_system_status(interviewuser_)
+    TTHONSRV_status = check_remote_system_status(interviewuser_)
     interviewuser__status = check_remote_system_status(interviewuser_)
     interviewuser__status = check_remote_system_status(interviewuser_)
     interviewuser__status = check_remote_system_status(interviewuser_)
@@ -85,7 +85,7 @@ def home(request):
         'hnjlicsrv01': hnjlicsrv01_status,
         'hnjlicsrv02': hnjlicsrv02_status,
         'hnjlicsrv03': hnjlicsrv03_status,
-        'interviewuser_': interviewuser__status,
+        'TTHONSRV': TTHONSRV_status,
         'interviewuser_': interviewuser__status,
         'interviewuser_': interviewuser__status,
         'interviewuser_': interviewuser__status,
