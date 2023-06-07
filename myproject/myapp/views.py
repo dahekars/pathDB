@@ -35,7 +35,7 @@ def home(request):
         'results': results,
         }
     
-    interviewuser_01 = 'example.com'  # Replace with the IP or domain name of the remote system
+    interviewuser_01 = '172.168.5.219'  # Replace with the IP or domain name of the remote system
     interviewuser_02 = 'example.com'  # Replace with the IP or domain name of the remote system
     interviewuser_03 = 'example.com'  # Replace with the IP or domain name of the remote system
     interviewuser_04 = 'example.com'  # Replace with the IP or domain name of the remote system
@@ -51,7 +51,7 @@ def home(request):
     interviewuser_ = 'example.com'  # Replace with the IP or domain name of the remote system
     interviewuser_ = 'example.com'  # Replace with the IP or domain name of the remote system
     interviewuser_ = 'example.com'  # Replace with the IP or domain name of the remote system
-    interviewuser_ = 'example.com'  # Replace with the IP or domain name of the remote system
+    interviewuser_ = '1.1.1.1'  # Replace with the IP or domain name of the remote system
     
     interviewuser_01_status = check_remote_system_status(interviewuser_01)
     interviewuser_02_status = check_remote_system_status(interviewuser_02)
